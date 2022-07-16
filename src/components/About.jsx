@@ -17,7 +17,7 @@ const About = () => {
 
   return (
     <div name='about'
-    className='w-full h-full bg-gradient-to-b from-gray-400 to-gray-800 text-white pl-36 pt-28'
+    className='w-full h-full bg-gradient-to-b from-gray-400 to-gray-800 text-white pl-5 md:pl-36 pt-28'
     >
         <div className='max-w-screen p-4 mx-auto flex flex-col justify-center w-full h-full'>
             <div className='pd-8'>
@@ -29,7 +29,7 @@ const About = () => {
             </p>
             <br />
             <p className='text-2xl text-black font-bold'>
-            Visit my Competitive Programming handles:
+            Visit my Competitive Programming handles :
             </p>
 
             {cp.map(({id, site, link}) => (

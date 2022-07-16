@@ -11,7 +11,7 @@ const Contact = () => {
 
             <div className='w-full grid grid-cols-1 sm:grid-cols-2 gap-8 text-center py-8 px-12 sm:px-0'>
 
-                <div className='shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-black h-56 text-left pl-5 w-3/4 text-xl'>
+                <div className='shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-black text-left pl-2 w-full h-full md:h-56 md:w-3/4 text-xl'>
                 <ul>
                 <li><p className='text-black font-bold text-2xl'>Location:</p> Sector 14, Udaipur, Rajasthan, 313001</li>
                 <li><p className='text-black font-bold text-2xl'>Email:</p> yashshah2400@gmail.com</li>
@@ -32,7 +32,6 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
   )
