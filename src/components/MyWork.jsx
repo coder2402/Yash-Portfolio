@@ -2,6 +2,7 @@ import React from 'react'
 import DiceGame from '../assets/portfolio/DiceGame.png';
 import Notes from '../assets/portfolio/Notes.png';
 import Safar from '../assets/portfolio/Safar.png';
+import Portfolio from '../assets/portfolio/Portfolio.png';
 
 const MyWork
  = () => {
@@ -9,18 +10,24 @@ const MyWork
     const work = [
         {
             id: 1,
+            src: My-Portfolio,
+            codeLink: 'https://github.com/coder2402/Yash-Portfolio',
+            demoLink: 'https://flourishing-pie-b59d01.netlify.app/'
+        },
+        {
+            id: 2,
             src: DiceGame,
             codeLink: 'https://github.com/coder2402/Dice-Game',
             demoLink: 'https://musing-engelbart-32c28a.netlify.app/'
         },
         {
-            id: 2,
+            id: 3,
             src: Notes,
             codeLink: 'https://github.com/coder2402/Notes-Website',
             demoLink: 'https://quizzical-ride-38a816.netlify.app/'
         },
         {
-            id: 3,
+            id: 4,
             src: Safar,
             codeLink: 'https://github.com/coder2402/Travelling-blogs'
         },
