@@ -10,7 +10,7 @@ const MyWork
     const work = [
         {
             id: 1,
-            src: My-Portfolio,
+            src: Portfolio,
             codeLink: 'https://github.com/coder2402/Yash-Portfolio',
             demoLink: 'https://flourishing-pie-b59d01.netlify.app/'
         },
