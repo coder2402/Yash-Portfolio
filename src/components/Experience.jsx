@@ -9,65 +9,65 @@ import node from '../assets/node.png'
 import reactImage from '../assets/react.png'
 import tailwind from '../assets/tailwind.png'
 
-const Experience = () => {
+const technologies = [
+    {
+        id: 1,
+        src: html,
+        title: 'HTML',
+        style: 'shadow-orange-500'
+    },
+    {
+        id: 2,
+        src: css,
+        title: 'CSS',
+        style: 'shadow-blue-500'
+    },
+    {
+        id: 3,
+        src: javascript,
+        title: 'JavaScript',
+        style: 'shadow-yellow-500'
+    },
+    {
+        id: 4,
+        src: reactImage,
+        title: 'React',
+        style: 'shadow-blue-600'
+    },
+    {
+        id: 5,
+        src: node,
+        title: 'Node',
+        style: 'shadow-green-500'
+    },
+    {
+        id: 6,
+        src: tailwind,
+        title: 'Tailwind',
+        style: 'shadow-sky-400'
+    },
+    {
+        id: 7,
+        src: cpp,
+        title: 'C++',
+        style: 'shadow-blue-400'
+    },
+    {
+        id: 8,
+        src: github,
+        title: 'GitHub',
+        style: 'shadow-gray-400'
+    },
+    {
+        id: 9,
+        src: mongoDb,
+        title: 'MongoDb',
+        style: 'shadow-green-500'
+    },
 
-    const technologies = [
-        {
-            id: 1,
-            src: html,
-            title: 'HTML',
-            style: 'shadow-orange-500'
-        },
-        {
-            id: 2,
-            src: css,
-            title: 'CSS',
-            style: 'shadow-blue-500'
-        },
-        {
-            id: 3,
-            src: javascript,
-            title: 'JavaScript',
-            style: 'shadow-yellow-500'
-        },
-        {
-            id: 4,
-            src: reactImage,
-            title: 'React',
-            style: 'shadow-blue-600'
-        },
-        {
-            id: 5,
-            src: node,
-            title: 'Node',
-            style: 'shadow-green-500'
-        },
-        {
-            id: 6,
-            src: tailwind,
-            title: 'Tailwind',
-            style: 'shadow-sky-400'
-        },
-        {
-            id: 7,
-            src: cpp,
-            title: 'C++',
-            style: 'shadow-blue-400'
-        },
-        {
-            id: 8,
-            src: github,
-            title: 'GitHub',
-            style: 'shadow-gray-400'
-        },
-        {
-            id: 9,
-            src: mongoDb,
-            title: 'MongoDb',
-            style: 'shadow-green-500'
-        },
-        
-    ]
+]
+
+const Experience = () => {
 
   return (
     <div name='experience' className='bg-gradient-to-b from-gray-400 to-gray-800 w-full h-full pt-24'>
@@ -83,7 +83,8 @@ const Experience = () => {
                         <div 
                         key={id} 
                         className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
-                    <img src={src} alt="" className='w-20 mx-auto' />
+                    {/* OPTIMIZATION: Added loading="lazy" for performance and alt={title} for accessibility */}
+                    <img src={src} alt={title} loading="lazy" className='w-20 mx-auto' />
                     <p className='mt-4'>{title}</p>
                 </div>
                     ))
