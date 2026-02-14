@@ -22,11 +22,12 @@ const Contact = () => {
                 <div className='flex justify-center items-center'>
                     <form action="https://getform.io/f/3f72a5e9-642d-4231-8245-cc38e85f0c06"
                     method='post' className='flex flex-col w-full md:w-1/2'>
-                        <input type="text" name='name' placeholder='Enter your name' className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
+                        {/* Security: Added required and maxLength attributes to prevent empty submissions and DoS */}
+                        <input type="text" name='name' placeholder='Enter your name' required maxLength={50} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
 
-                        <input type="email" name='email' placeholder='Enter your email' className='p-2 my-4 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
+                        <input type="email" name='email' placeholder='Enter your email' required maxLength={100} className='p-2 my-4 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
 
-                        <textarea name="message" rows="10" placeholder='Enter your message' className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'></textarea>
+                        <textarea name="message" rows="10" placeholder='Enter your message' required maxLength={500} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'></textarea>
 
                         <button className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-105 duration-300'> Submit</button>
                     </form>
