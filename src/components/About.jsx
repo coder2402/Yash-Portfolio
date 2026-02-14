@@ -1,19 +1,19 @@
 import React from 'react'
 
-const About = () => {
+const cp = [
+    {
+        id: 1,
+        site: 'Codeforces',
+        link: 'https://codeforces.com/profile/yashshah03'
+    },
+    {
+        id: 2,
+        site: 'Codechef',
+        link: 'https://www.codechef.com/users/yashshah03'
+    },
+]
 
-    const cp = [
-        {
-            id: 1,
-            site: 'Codeforces',
-            link: 'https://codeforces.com/profile/yashshah03'
-        },
-        {
-            id: 2,
-            site: 'Codechef',
-            link: 'https://www.codechef.com/users/yashshah03'
-        },
-    ]
+const About = () => {
 
   return (
     <div name='about'
