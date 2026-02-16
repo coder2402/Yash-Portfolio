@@ -1,4 +1,3 @@
-import React from 'react'
 import DiceGame from '../assets/portfolio/DiceGame.png';
 import Notes from '../assets/portfolio/Notes.png';
 import Safar from '../assets/portfolio/Safar.png';

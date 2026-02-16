@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroImage from '../assets/heroImage.png'
 import {AiOutlineCaretLeft} from 'react-icons/ai'
 import {BiDownload} from 'react-icons/bi'
