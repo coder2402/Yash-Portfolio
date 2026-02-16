@@ -23,13 +23,13 @@ const Contact = () => {
                     <form action="https://getform.io/f/3f72a5e9-642d-4231-8245-cc38e85f0c06"
                     method='post' className='flex flex-col w-full md:w-1/2'>
                         {/* Security: Added required and maxLength attributes to prevent empty submissions and DoS */}
-                        <input type="text" name='name' placeholder='Enter your name' required maxLength={50} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
+                        <input type="text" name='name' placeholder='Enter your name' aria-label="Name" autoComplete="name" required maxLength={50} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'/>
 
-                        <input type="email" name='email' placeholder='Enter your email' required maxLength={100} className='p-2 my-4 bg-transparent border-2 rounded-md text-white focus:outline-none'/>
+                        <input type="email" name='email' placeholder='Enter your email' aria-label="Email" autoComplete="email" required maxLength={100} className='p-2 my-4 bg-transparent border-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'/>
 
-                        <textarea name="message" rows="10" placeholder='Enter your message' required maxLength={500} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'></textarea>
+                        <textarea name="message" rows="10" placeholder='Enter your message' aria-label="Message" autoComplete="off" required maxLength={500} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'></textarea>
 
-                        <button className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-105 duration-300'> Submit</button>
+                        <button type="submit" aria-label="Send Message" className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-105 duration-300'> Submit</button>
                     </form>
                 </div>
             </div>
