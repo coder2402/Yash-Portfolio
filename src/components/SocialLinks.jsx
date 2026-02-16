@@ -3,48 +3,48 @@ import {FaGithub, FaLinkedin, FaInstagram} from 'react-icons/fa';
 import {HiOutlineMail} from 'react-icons/hi'
 
 
-const SocialLinks = () => {
+const links = [
+    {
+        id: 1,
+        child: (
+            <>
+                Linkedin <FaLinkedin size={30}/>
+                </>
+        ),
+        href: 'https://www.linkedin.com/in/yash-shah-ab2887202/',
+        style: 'rounded-tr-md'
+    },
+    {
+        id: 2,
+        child: (
+            <>
+                GitHub <FaGithub size={30}/>
+                </>
+        ),
+        href: 'https://github.com/coder2402',
+    },
+    {
+        id: 3,
+        child: (
+            <>
+                Mail <HiOutlineMail size={30}/>
+                </>
+        ),
+        href: 'mailto:dummy@gmail.com',
+    },
+    {
+        id: 4,
+        child: (
+            <>
+                Instagram <FaInstagram size={30}/>
+                </>
+        ),
+        href: 'https://www.instagram.com/yash__shah____/',
+        style: 'rounded-br-md',
+    }
+]
 
-    const links = [
-        {
-            id: 1,
-            child: (
-                <>
-                    Linkedin <FaLinkedin size={30}/>
-                    </>
-            ),
-            href: 'https://www.linkedin.com/in/yash-shah-ab2887202/',
-            style: 'rounded-tr-md'
-        },
-        {
-            id: 2,
-            child: (
-                <>
-                    GitHub <FaGithub size={30}/>
-                    </>
-            ),
-            href: 'https://github.com/coder2402',
-        },
-        {
-            id: 3,
-            child: (
-                <>
-                    Mail <HiOutlineMail size={30}/>
-                    </>
-            ),
-            href: 'mailto:dummy@gmail.com',
-        },
-        {
-            id: 4,
-            child: (
-                <>
-                    Instagram <FaInstagram size={30}/>
-                    </>
-            ),
-            href: 'https://www.instagram.com/yash__shah____/',
-            style: 'rounded-br-md',
-        }
-    ]
+const SocialLinks = () => {
 
   return (
     <div className='hidden lg:flex flex-col top-[35%] left-0 fixed'>

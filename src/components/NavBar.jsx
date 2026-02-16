@@ -2,30 +2,30 @@ import React, { useState } from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
 import {Link} from 'react-scroll';
 
-const NavBar = () => {
+const elements = [
+    {
+        id: 1,
+        element: 'home'
+    },
+    {
+        id: 2,
+        element: 'about'
+    },
+    {
+        id: 3,
+        element: 'myWork'
+    },
+    {
+        id: 4,
+        element: 'experience'
+    },
+    {
+        id: 5,
+        element: 'contact'
+    },
+]
 
-    const elements = [
-        {
-            id: 1,
-            element: 'home'
-        },
-        {
-            id: 2,
-            element: 'about'
-        },
-        {
-            id: 3,
-            element: 'myWork'
-        },
-        {
-            id: 4,
-            element: 'experience'
-        },
-        {
-            id: 5,
-            element: 'contact'
-        },
-    ]
+const NavBar = () => {
 
     const [nav, setNav] = useState(false)
 
