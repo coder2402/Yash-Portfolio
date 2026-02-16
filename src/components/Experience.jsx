@@ -9,6 +9,7 @@ import node from '../assets/node.png'
 import reactImage from '../assets/react.png'
 import tailwind from '../assets/tailwind.png'
 
+// Static data array defined outside the component to avoid reallocation on every render
 const technologies = [
     {
         id: 1,
