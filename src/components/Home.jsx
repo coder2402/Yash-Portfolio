@@ -19,7 +19,15 @@ const Home = () => {
                 </div>
 
             <div>
-                <img src={HeroImage} alt="my profile" className='rounded-3xl mx-auto w-2/3 md:w-2/3'/>
+                {/* OPTIMIZATION: Added fetchPriority="high" for LCP and explicit dimensions to prevent CLS */}
+                <img
+                    src={HeroImage}
+                    alt="my profile"
+                    className='rounded-3xl mx-auto w-2/3 md:w-2/3'
+                    width={476}
+                    height={524}
+                    fetchPriority="high"
+                />
             </div>
 
             <div className='flex flex-col justify-center h-full w-2/3 ml-7'>
