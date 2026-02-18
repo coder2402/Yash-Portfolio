@@ -53,10 +53,25 @@ const MyWork = () => {
                             <img src={src} alt={title} loading="lazy" className='rounded-md duration-200 hover:scale-105' />
                             <div className='flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-400 to-gray-800'>
                                 {demoLink && (
-                                <button className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-800 to-gray-400'><a href={demoLink} target='_blank' rel="noreferrer">Demo</a></button>
-                                    
+                                    <a
+                                        href={demoLink}
+                                        target='_blank'
+                                        rel="noreferrer"
+                                        aria-label={`Demo for ${title}`}
+                                        className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500 bg-gradient-to-r from-gray-800 to-gray-400 block text-center rounded-md'
+                                    >
+                                        Demo
+                                    </a>
                                 )}
-                                <button className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-400 to-gray-800'><a href={codeLink} target='_blank' rel="noreferrer">Code</a></button>
+                                <a
+                                    href={codeLink}
+                                    target='_blank'
+                                    rel="noreferrer"
+                                    aria-label={`Code for ${title}`}
+                                    className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500 bg-gradient-to-r from-gray-400 to-gray-800 block text-center rounded-md'
+                                >
+                                    Code
+                                </a>
                             </div>
                         </div>
                     
