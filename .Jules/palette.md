@@ -5,3 +5,7 @@
 ## 2026-10-24 - [Semantic HTML for Interactive Elements]
 **Learning:** Using `div` with `onClick` for interactive elements (like menu toggles) creates a major accessibility barrier as it lacks keyboard focus and semantic meaning.
 **Action:** Always use `<button>` for click interactions and include `aria-label` and `aria-expanded` attributes to communicate state to screen readers.
+
+## 2026-10-25 - [Invalid Nested Interactive Elements]
+**Learning:** Nesting `<a>` tags inside `<button>` tags creates invalid HTML and breaks accessibility for screen readers and keyboard users.
+**Action:** Replace nested structures with a single styled `<a>` tag (using `block`, `text-center`, etc.) to maintain visual design while ensuring semantic validity.
