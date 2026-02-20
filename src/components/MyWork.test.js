@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import MyWork from './MyWork';
 import React from 'react';
 
@@ -27,13 +26,13 @@ test('renders Demo and Code links correctly', () => {
   expect(codeLinks.length).toBeGreaterThan(0);
 
   demoLinks.forEach(link => {
-      expect(link).toHaveAttribute('target', '_blank');
-      expect(link).toHaveAttribute('rel', 'noreferrer noopener');
+      expect(link.getAttribute('target')).toBe('_blank');
+      expect(link.getAttribute('rel')).toBe('noreferrer noopener');
   });
 
   codeLinks.forEach(link => {
-      expect(link).toHaveAttribute('target', '_blank');
-      expect(link).toHaveAttribute('rel', 'noreferrer noopener');
+      expect(link.getAttribute('target')).toBe('_blank');
+      expect(link.getAttribute('rel')).toBe('noreferrer noopener');
   });
 
   // Verify they are NOT buttons
