@@ -20,7 +20,7 @@ const Contact = () => {
                 </div>
             
                 <div className='flex justify-center items-center'>
-                    <form action="https://getform.io/f/3f72a5e9-642d-4231-8245-cc38e85f0c06"
+                    <form action={process.env.REACT_APP_GETFORM_ENDPOINT} aria-label="Contact form"
                     method='post' className='flex flex-col w-full md:w-1/2'>
                         {/* Security: Added required and maxLength attributes to prevent empty submissions and DoS */}
                         <input type="text" name='name' placeholder='Enter your name' aria-label="Name" autoComplete="name" required maxLength={50} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'/>
