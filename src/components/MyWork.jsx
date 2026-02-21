@@ -53,10 +53,10 @@ const MyWork = () => {
                             <img src={src} alt={title} loading="lazy" className='rounded-md duration-200 hover:scale-105' />
                             <div className='flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-400 to-gray-800'>
                                 {demoLink && (
-                                <button className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-800 to-gray-400'><a href={demoLink} target='_blank' rel="noreferrer">Demo</a></button>
+                                <a href={demoLink} target='_blank' rel="noreferrer noopener" className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-800 to-gray-400 text-center block'>Demo</a>
                                     
                                 )}
-                                <button className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-400 to-gray-800'><a href={codeLink} target='_blank' rel="noreferrer">Code</a></button>
+                                <a href={codeLink} target='_blank' rel="noreferrer noopener" className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-400 to-gray-800 text-center block'>Code</a>
                             </div>
                         </div>
                     
