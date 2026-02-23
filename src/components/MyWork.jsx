@@ -37,7 +37,7 @@ const work = [
 const MyWork = () => {
 
   return (
-    <div name='myWork' className='bg-gradient-to-b from-gray-800 to-gray-400 w-full text-white md:h-screen'>
+    <div id='myWork' className='bg-gradient-to-b from-gray-800 to-gray-400 w-full text-white md:h-screen'>
         <div className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'>
             <div className='pb-8'>
                 <p className='text-4xl font-bold inline border-b-4 border-black text-gray-400'>My Work</p>
