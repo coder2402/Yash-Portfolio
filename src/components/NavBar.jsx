@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
-import {Link} from 'react-scroll';
 
 // OPTIMIZATION: Moved static array outside component to prevent reallocation on every render
 const elements = [
@@ -40,9 +39,9 @@ const NavBar = () => {
         <ul className='hidden md:flex'>
             {elements.map(({id, element}) => (
                 <li key={id} className='px-4 capitalize cursor-pointer font-medium text-gray-500 hover:scale-105 hover:font-bold  duration-200'>
-                    <Link to={element} smooth duration={500}>
+                    <a href={`#${element}`}>
               {element}
-            </Link>
+            </a>
                     
                     </li>
             ))}
@@ -62,9 +61,9 @@ const NavBar = () => {
             <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500'>
             {elements.map(({id, element}) => (
                     <li key={id} className='px-4 cursor-pointer capitalize py-6 text-4xl hover:font-bold'>
-                        <Link onClick={() => setNav(!nav)} to={element} smooth duration={500}>
+                        <a onClick={() => setNav(!nav)} href={`#${element}`}>
               {element}
-            </Link>
+            </a>
                     </li>
                 ))}
             </ul>
