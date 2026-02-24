@@ -2,11 +2,10 @@ import React from 'react'
 import HeroImage from '../assets/heroImage.png'
 import {AiOutlineCaretLeft} from 'react-icons/ai'
 import {BiDownload} from 'react-icons/bi'
-// import {Link} from 'react-scroll'
 
 const Home = () => {
   return (
-    <div name="home" className='h-screen w-full bg-gradient-to-b from-gray-800 to-gray-400 pt-20'>
+    <div id="home" className='h-screen w-full bg-gradient-to-b from-gray-800 to-gray-400 pt-20'>
         <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row'>
 
                 <div>
