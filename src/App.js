@@ -15,12 +15,16 @@ function App() {
       <NavBar />
       <Home />
       <About />
-      <Suspense fallback={<div className="h-screen w-full bg-gray-800 flex justify-center items-center text-white text-3xl">Loading My Work...</div>}>
-        <MyWork />
-      </Suspense>
-      <Suspense fallback={<div className="h-screen w-full bg-gray-800 flex justify-center items-center text-white text-3xl">Loading Experience...</div>}>
-        <Experience />
-      </Suspense>
+      <div id="myWork">
+        <Suspense fallback={<div className="h-screen w-full bg-gray-800 flex justify-center items-center text-white text-3xl">Loading My Work...</div>}>
+          <MyWork />
+        </Suspense>
+      </div>
+      <div id="experience">
+        <Suspense fallback={<div className="h-screen w-full bg-gray-800 flex justify-center items-center text-white text-3xl">Loading Experience...</div>}>
+          <Experience />
+        </Suspense>
+      </div>
       <Contact />
       <SocialLinks />
     </div>

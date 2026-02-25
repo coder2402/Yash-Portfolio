@@ -3,11 +3,6 @@ import '@testing-library/jest-dom';
 import NavBar from './NavBar';
 import React from 'react';
 
-// Mock react-scroll Link since we are testing rendering, not scrolling behavior
-jest.mock('react-scroll', () => ({
-  Link: (props) => <div>{props.children}</div>
-}));
-
 test('renders NavBar with all navigation links', () => {
   render(<NavBar />);
 
