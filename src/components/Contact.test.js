@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import Contact from './Contact';
 import React from 'react';
 
@@ -15,20 +14,31 @@ test('renders Contact form with correct action from environment variable', () =>
   render(<Contact />);
 
   const form = screen.getByRole('form', { name: /contact form/i });
-  expect(form).toHaveAttribute('action', 'https://test-endpoint.com/f/test');
-  expect(form).toHaveAttribute('method', 'post');
+  expect(form.getAttribute('action')).toBe('https://test-endpoint.com/f/test');
+  expect(form.getAttribute('method')).toBe('post');
 
   // Restore the original environment
   process.env = originalEnv;
 });
 
-test('renders all input fields with correct attributes', () => {
+test('renders all input fields with correct attributes and constraints', () => {
   render(<Contact />);
 
-  expect(screen.getByPlaceholderText(/enter your name/i)).toBeRequired();
-  expect(screen.getByPlaceholderText(/enter your email/i)).toBeRequired();
-  expect(screen.getByPlaceholderText(/enter your message/i)).toBeRequired();
+  const nameInput = screen.getByPlaceholderText(/enter your name/i);
+  const emailInput = screen.getByPlaceholderText(/enter your email/i);
+  const messageInput = screen.getByPlaceholderText(/enter your message/i);
 
-  expect(screen.getByLabelText(/name/i)).toHaveAttribute('autoComplete', 'name');
-  expect(screen.getByLabelText(/email/i)).toHaveAttribute('autoComplete', 'email');
+  // Verify required attributes
+  expect(nameInput.required).toBe(true);
+  expect(emailInput.required).toBe(true);
+  expect(messageInput.required).toBe(true);
+
+  // Verify autoComplete attributes
+  expect(nameInput.getAttribute('autoComplete')).toBe('name');
+  expect(emailInput.getAttribute('autoComplete')).toBe('email');
+
+  // Verify maxLength attributes
+  expect(nameInput.getAttribute('maxLength')).toBe('50');
+  expect(emailInput.getAttribute('maxLength')).toBe('100');
+  expect(messageInput.getAttribute('maxLength')).toBe('500');
 });
