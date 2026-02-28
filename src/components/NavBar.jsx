@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
 // OPTIMIZATION: Moved static array outside component to prevent reallocation on every render
 const elements = [
@@ -28,6 +28,9 @@ const NavBar = () => {
 
     const [nav, setNav] = useState(false)
 
+    // OPTIMIZATION: Memoize the toggle handler to prevent unnecessary re-renders
+    const toggleNav = useCallback(() => setNav(prev => !prev), [])
+
   return (
     <div className='flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed'>
         <div>
@@ -49,7 +52,7 @@ const NavBar = () => {
         {/* For mobile */}
         <button
             className='cursor-pointer pr-4 z-10 text-gray-500 md:hidden focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-md'
-            onClick={() => setNav(!nav)}
+            onClick={toggleNav}
             aria-label={nav ? "Close menu" : "Open menu"}
             aria-expanded={nav}
         >
@@ -60,7 +63,7 @@ const NavBar = () => {
             <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500'>
             {elements.map(({id, element}) => (
                     <li key={id} className='px-4 cursor-pointer capitalize py-6 text-4xl hover:font-bold'>
-                        <a onClick={() => setNav(!nav)} href={`#${element}`}>
+                        <a onClick={toggleNav} href={`#${element}`}>
               {element}
             </a>
                     </li>
