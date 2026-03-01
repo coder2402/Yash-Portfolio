@@ -36,7 +36,7 @@ const Home = () => {
                 <p className='text-black font-bold text-2xl py-3 max-w-md'>I'm a Cse Undergrad</p>
 
                 <div>
-                    <a href='/resume.pdf' download={true} className='text-xl group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer'>
+                    <a href='/resume.pdf' download={true} className='text-xl group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-800'>
                         Resume
                         <span>
                             <BiDownload className='ml-2'/>
