@@ -34,7 +34,7 @@ const About = () => {
 
             {cp.map(({id, site, link}) => (
                 <p key={id} className='text-xl mt-2'>
-                <a href={link} className='text-blue-500' target='_blank' rel="noreferrer">{site}</a> 
+                <a href={link} className='text-blue-500 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800' target='_blank' rel="noreferrer">{site}</a>
             </p>
             ))}
 
