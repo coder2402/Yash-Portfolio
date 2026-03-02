@@ -29,7 +29,7 @@ const Contact = () => {
 
                         <textarea name="message" rows="10" placeholder='Enter your message' aria-label="Message" autoComplete="off" required maxLength={500} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'></textarea>
 
-                        <button type="submit" aria-label="Send Message" className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-105 duration-300'> Submit</button>
+                        <button type="submit" aria-label="Send Message" className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-105 duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-800'> Submit</button>
                     </form>
                 </div>
             </div>

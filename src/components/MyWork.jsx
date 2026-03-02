@@ -58,7 +58,7 @@ const MyWork = () => {
                                     target='_blank'
                                     rel="noreferrer noopener"
                                     aria-label={`Demo for ${title}`}
-                                    className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-800 to-gray-400 text-center block'
+                                    className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-800 to-gray-400 text-center block focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-800 rounded-md'
                                 >
                                     Demo
                                 </a>
@@ -68,7 +68,7 @@ const MyWork = () => {
                                     target='_blank'
                                     rel="noreferrer noopener"
                                     aria-label={`Code for ${title}`}
-                                    className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-400 to-gray-800 text-center block'
+                                    className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-400 to-gray-800 text-center block focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-800 rounded-md'
                                 >
                                     Code
                                 </a>
