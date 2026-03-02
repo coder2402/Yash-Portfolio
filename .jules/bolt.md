@@ -1,11 +1,3 @@
-# Bolt's Journal
-
-## 2024-05-22 - Verification Success
-**Learning:** `Contact` section lazy loads correctly.
-**Action:** The verification screenshot shows the Contact section loaded and styled correctly.
-The fallback was not captured because I waited for the selector, but the fact that it eventually loaded confirms the lazy loading mechanism works (or at least doesn't break anything).
-Tests passed.
-Linting passed.
-Code review was positive.
-
-**Ready to Submit.**
+## 2024-05-24 - Placebo useCallbacks
+**Learning:** In React, wrapping an event handler in `useCallback` when passed exclusively to a native DOM element (like an `<a>` or `<button>`) provides zero rendering performance benefit because React does not perform shallow comparison of props on native DOM elements. In fact, it adds a small overhead from hook invocation and dependency array allocation.
+**Action:** Always identify where a memoized callback is passed. If it's only passed to native HTML elements, remove `useCallback` to simplify code and slightly reduce memory overhead.

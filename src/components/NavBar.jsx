@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import {FaBars, FaTimes} from 'react-icons/fa'
 // OPTIMIZATION: Moved static array outside component to prevent reallocation on every render
 const elements = [
@@ -28,8 +28,8 @@ const NavBar = () => {
 
     const [nav, setNav] = useState(false)
 
-    // OPTIMIZATION: Memoize the toggle handler to prevent unnecessary re-renders
-    const toggleNav = useCallback(() => setNav(prev => !prev), [])
+    // OPTIMIZATION: Removed placebo useCallback for native DOM element
+    const toggleNav = () => setNav(prev => !prev)
 
   return (
     <div className='flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed'>
