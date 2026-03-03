@@ -9,7 +9,7 @@ const Home = () => {
         <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row'>
 
                 <div>
-                    <div className='hidden lg:flex group text-white w-fit px-6 py-3 my-2 items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer'>
+                    <div className='hidden lg:flex group text-white w-fit px-6 py-3 my-2 items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500'>
                         <span>
                             <AiOutlineCaretLeft className='mr-3 '/>
                         </span>
@@ -36,7 +36,7 @@ const Home = () => {
                 <p className='text-black font-bold text-2xl py-3 max-w-md'>I'm a Cse Undergrad</p>
 
                 <div>
-                    <a href='/resume.pdf' download={true} className='text-xl group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-800'>
+                    <a href='/resume.pdf' download={true} className='text-xl group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800'>
                         Resume
                         <span>
                             <BiDownload className='ml-2'/>
