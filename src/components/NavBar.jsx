@@ -41,7 +41,7 @@ const NavBar = () => {
         <ul className='hidden md:flex'>
             {elements.map(({id, element}) => (
                 <li key={id} className='px-4 capitalize cursor-pointer font-medium text-gray-500 hover:scale-105 hover:font-bold  duration-200'>
-                    <a href={`#${element}`}>
+                    <a href={`#${element}`} className='focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-md'>
               {element}
             </a>
                     
@@ -51,7 +51,7 @@ const NavBar = () => {
 
         {/* For mobile */}
         <button
-            className='cursor-pointer pr-4 z-10 text-gray-500 md:hidden focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-md'
+            className='cursor-pointer pr-4 z-10 text-gray-500 md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-md'
             onClick={toggleNav}
             aria-label={nav ? "Close menu" : "Open menu"}
             aria-expanded={nav}
@@ -63,7 +63,7 @@ const NavBar = () => {
             <ul className='flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500'>
             {elements.map(({id, element}) => (
                     <li key={id} className='px-4 cursor-pointer capitalize py-6 text-4xl hover:font-bold'>
-                        <a onClick={toggleNav} href={`#${element}`}>
+                        <a onClick={toggleNav} href={`#${element}`} className='focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-md'>
               {element}
             </a>
                     </li>
