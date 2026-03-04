@@ -28,7 +28,7 @@ test('renders competitive programming links correctly', () => {
   ];
 
   cpLinks.forEach(({ site, link }) => {
-    const linkElement = screen.getByRole('link', { name: site });
+    const linkElement = screen.getByRole('link', { name: `${site} profile` });
     expect(linkElement).toBeInTheDocument();
     expect(linkElement).toHaveAttribute('href', link);
     expect(linkElement).toHaveAttribute('target', '_blank');
