@@ -10,27 +10,35 @@ const work = [
         src: Portfolio,
         title: 'Portfolio',
         codeLink: 'https://github.com/coder2402/Yash-Portfolio',
-        demoLink: 'https://flourishing-pie-b59d01.netlify.app/'
+        demoLink: 'https://flourishing-pie-b59d01.netlify.app/',
+        width: 1893,
+        height: 844
     },
     {
         id: 2,
         src: DiceGame,
         title: 'Dice Game',
         codeLink: 'https://github.com/coder2402/Dice-Game',
-        demoLink: 'https://musing-engelbart-32c28a.netlify.app/'
+        demoLink: 'https://musing-engelbart-32c28a.netlify.app/',
+        width: 1765,
+        height: 847
     },
     {
         id: 3,
         src: Notes,
         title: 'Notes',
         codeLink: 'https://github.com/coder2402/Notes-Website',
-        demoLink: 'https://quizzical-ride-38a816.netlify.app/'
+        demoLink: 'https://quizzical-ride-38a816.netlify.app/',
+        width: 1888,
+        height: 756
     },
     {
         id: 4,
         src: Safar,
         title: 'Safar',
-        codeLink: 'https://github.com/coder2402/Travelling-blogs'
+        codeLink: 'https://github.com/coder2402/Travelling-blogs',
+        width: 1897,
+        height: 727
     },
 ]
 
@@ -47,10 +55,10 @@ const MyWork = () => {
             {/* Card */}
             <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
                 {
-                    work.map(({id, src, title, codeLink, demoLink}) => (
+                    work.map(({id, src, title, codeLink, demoLink, width, height}) => (
                         <div key={id} className='shadow-md shadow-gray-600 rounded-lg bg-gradient-to-r from-gray-800 via-gray-400 to-gray-800'>
-                            {/* OPTIMIZATION: Added loading="lazy" for performance and alt={title} for accessibility */}
-                            <img src={src} alt={title} loading="lazy" className='rounded-md duration-200 hover:scale-105' />
+                            {/* OPTIMIZATION: Added loading="lazy" and explicit dimensions for performance to prevent CLS, and alt={title} for accessibility */}
+                            <img src={src} alt={title} loading="lazy" width={width} height={height} className='rounded-md duration-200 hover:scale-105' />
                             <div className='flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-400 to-gray-800'>
                                 {demoLink && (
                                 <a
