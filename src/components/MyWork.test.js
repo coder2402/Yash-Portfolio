@@ -11,6 +11,8 @@ test('renders MyWork component with images and lazy loading', () => {
       expect(img.getAttribute('src')).toBeTruthy();
       expect(img.getAttribute('loading')).toBe('lazy');
       expect(img.getAttribute('alt')).toBeTruthy();
+      expect(img.getAttribute('width')).toBeTruthy();
+      expect(img.getAttribute('height')).toBeTruthy();
   });
 });
 
