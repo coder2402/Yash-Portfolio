@@ -34,7 +34,15 @@ const About = () => {
 
             {cp.map(({id, site, link}) => (
                 <p key={id} className='text-xl mt-2'>
-                <a href={link} className='text-blue-500' target='_blank' rel="noreferrer">{site}</a> 
+                <a
+                    href={link}
+                    className='text-blue-500 hover:text-blue-400 hover:underline duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-sm'
+                    target='_blank'
+                    rel="noreferrer"
+                    aria-label={`${site} profile`}
+                >
+                    {site}
+                </a>
             </p>
             ))}
 

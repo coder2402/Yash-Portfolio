@@ -1,3 +1,6 @@
 ## 2024-05-24 - Focus Management on Navigational Elements and Buttons
 **Learning:** Found a widespread pattern of using `focus:ring` across buttons and links, which causes lingering focus rings after a mouse click, degrading the non-keyboard user experience. Additionally, primary navigational links (e.g. in NavBar) lacked focus indicators altogether, hindering keyboard navigability.
 **Action:** Consistently replace `focus:ring` with `focus-visible:ring` to assure focus indicators only appear during keyboard navigation, satisfying both mouse and keyboard users. Ensure all interactive links (`<a>`) inherently have `focus-visible` styling if lacking.
+## 2024-05-18 - Missing interactive states on list elements
+**Learning:** External links inside lists frequently lacked hover, active, and focus states. Providing clear focus states (`focus-visible`) and transition effects ensures better accessibility for keyboard users navigating through lists of content.
+**Action:** Always check list elements with embedded links for proper interactive states. Ensure `focus-visible` states are implemented, and add appropriate descriptive `aria-label`s for screen reader context if the visible text alone is insufficient.
