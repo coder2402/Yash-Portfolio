@@ -32,7 +32,7 @@ test('renders competitive programming links correctly', () => {
     expect(linkElement).toBeInTheDocument();
     expect(linkElement).toHaveAttribute('href', link);
     expect(linkElement).toHaveAttribute('target', '_blank');
-    expect(linkElement).toHaveAttribute('rel', 'noreferrer');
+    expect(linkElement).toHaveAttribute('rel', 'noreferrer noopener');
   });
 });
 
