@@ -9,6 +9,8 @@ const work = [
         id: 1,
         src: Portfolio,
         title: 'Portfolio',
+        width: 1893,
+        height: 844,
         codeLink: 'https://github.com/coder2402/Yash-Portfolio',
         demoLink: 'https://flourishing-pie-b59d01.netlify.app/'
     },
@@ -16,6 +18,8 @@ const work = [
         id: 2,
         src: DiceGame,
         title: 'Dice Game',
+        width: 1765,
+        height: 847,
         codeLink: 'https://github.com/coder2402/Dice-Game',
         demoLink: 'https://musing-engelbart-32c28a.netlify.app/'
     },
@@ -23,6 +27,8 @@ const work = [
         id: 3,
         src: Notes,
         title: 'Notes',
+        width: 1888,
+        height: 756,
         codeLink: 'https://github.com/coder2402/Notes-Website',
         demoLink: 'https://quizzical-ride-38a816.netlify.app/'
     },
@@ -30,6 +36,8 @@ const work = [
         id: 4,
         src: Safar,
         title: 'Safar',
+        width: 1897,
+        height: 727,
         codeLink: 'https://github.com/coder2402/Travelling-blogs'
     },
 ]
@@ -47,10 +55,10 @@ const MyWork = () => {
             {/* Card */}
             <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
                 {
-                    work.map(({id, src, title, codeLink, demoLink}) => (
+                    work.map(({id, src, title, width, height, codeLink, demoLink}) => (
                         <div key={id} className='shadow-md shadow-gray-600 rounded-lg bg-gradient-to-r from-gray-800 via-gray-400 to-gray-800'>
-                            {/* OPTIMIZATION: Added loading="lazy" for performance and alt={title} for accessibility */}
-                            <img src={src} alt={title} loading="lazy" className='rounded-md duration-200 hover:scale-105' />
+                            {/* OPTIMIZATION: Added loading="lazy" and explicit dimensions for performance to prevent CLS, and alt={title} for accessibility */}
+                            <img src={src} alt={title} width={width} height={height} loading="lazy" className='rounded-md duration-200 hover:scale-105' />
                             <div className='flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-400 to-gray-800'>
                                 {demoLink && (
                                 <a
