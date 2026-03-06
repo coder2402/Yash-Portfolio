@@ -12,7 +12,8 @@ const links = [
                 </>
         ),
         href: 'https://www.linkedin.com/in/yash-shah-ab2887202/',
-        style: 'rounded-tr-md'
+        style: 'rounded-tr-md',
+        ariaLabel: 'LinkedIn Profile'
     },
     {
         id: 2,
@@ -22,6 +23,7 @@ const links = [
                 </>
         ),
         href: 'https://github.com/coder2402',
+        ariaLabel: 'GitHub Profile'
     },
     {
         id: 3,
@@ -31,6 +33,7 @@ const links = [
                 </>
         ),
         href: 'mailto:dummy@gmail.com',
+        ariaLabel: 'Send an Email'
     },
     {
         id: 4,
@@ -41,6 +44,7 @@ const links = [
         ),
         href: 'https://www.instagram.com/yash__shah____/',
         style: 'rounded-br-md',
+        ariaLabel: 'Instagram Profile'
     }
 ]
 
@@ -50,17 +54,18 @@ const SocialLinks = () => {
     <div className='hidden lg:flex flex-col top-[35%] left-0 fixed'>
         <ul>
 
-            {links.map(({id, child, href, style, download}) => (
+            {links.map(({id, child, href, style, download, ariaLabel}) => (
                 <li key={id} className={
                     "flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] focus-within:ml-[-10px] hover:rounded-md focus-within:rounded-md duration-300 bg-black" +
                     " " +
                     style
                   }>
                 <a href={href}
-                 className='flex justify-between items-center w-full text-white' 
+                 className='flex justify-between items-center w-full text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-md'
                  download={download} 
                  target='_blank' 
                  rel="noreferrer"
+                 aria-label={ariaLabel}
                  >
                     {child}
                 </a>
