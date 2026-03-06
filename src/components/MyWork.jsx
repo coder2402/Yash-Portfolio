@@ -34,6 +34,9 @@ const work = [
     },
 ]
 
+const linkStyles =
+    'w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r text-center block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800 rounded-md';
+
 const MyWork = () => {
 
   return (
@@ -53,22 +56,22 @@ const MyWork = () => {
                             <img src={src} alt={title} loading="lazy" className='rounded-md duration-200 hover:scale-105' />
                             <div className='flex items-center justify-center bg-gradient-to-r from-gray-800 via-gray-400 to-gray-800'>
                                 {demoLink && (
-                                <a
-                                    href={demoLink}
-                                    target='_blank'
-                                    rel="noreferrer noopener"
-                                    aria-label={`Demo for ${title}`}
-                                    className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-800 to-gray-400 text-center block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800 rounded-md'
-                                >
-                                    Demo
-                                </a>
+                                    <a
+                                        href={demoLink}
+                                        target='_blank'
+                                        rel='noreferrer noopener'
+                                        aria-label={`Demo for ${title}`}
+                                        className={`${linkStyles} from-gray-800 to-gray-400`}
+                                    >
+                                        Demo
+                                    </a>
                                 )}
                                 <a
                                     href={codeLink}
                                     target='_blank'
-                                    rel="noreferrer noopener"
+                                    rel='noreferrer noopener'
                                     aria-label={`Code for ${title}`}
-                                    className='w-1/2 px-6 py-2 m-4 duration-200 hover:scale-105 bg-gradient-to-r from-gray-400 to-gray-800 text-center block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800 rounded-md'
+                                    className={`${linkStyles} from-gray-400 to-gray-800`}
                                 >
                                     Code
                                 </a>
