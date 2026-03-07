@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState, useEffect, useRef } from 'react';
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import SocialLinks from "./components/SocialLinks";
@@ -9,21 +9,64 @@ const MyWork = lazy(() => import("./components/MyWork"));
 const Experience = lazy(() => import("./components/Experience"));
 const Contact = lazy(() => import("./components/Contact"));
 
+// OPTIMIZATION: IntersectionObserver-based LazySection wrapper component
+// Defers loading the React.lazy chunk until the section is scrolled into view (or close to it)
+// It also applies the `id` to the persistent wrapper, preventing the anchor target from missing if hash navigation happens before chunk loads
+const LazySection = ({ id, children, fallbackText }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing once it's visible
+        }
+      },
+      {
+        rootMargin: '200px', // Start loading when within 200px of viewport
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <div id={id} ref={sectionRef}>
+      {isVisible ? (
+        <Suspense fallback={<div className="h-screen w-full bg-gray-800 flex justify-center items-center text-white text-3xl">{fallbackText}</div>}>
+          {children}
+        </Suspense>
+      ) : (
+        // Placeholder with the same background to avoid visual jarring, keeping height empty but present
+        <div className="h-screen w-full bg-gray-800" />
+      )}
+    </div>
+  );
+};
+
 function App() {
   return (
     <div>
       <NavBar />
       <Home />
       <About />
-      <Suspense fallback={<div className="h-screen w-full bg-gray-800 flex justify-center items-center text-white text-3xl">Loading My Work...</div>}>
+      <LazySection id="myWork" fallbackText="Loading My Work...">
         <MyWork />
-      </Suspense>
-      <Suspense fallback={<div className="h-screen w-full bg-gray-800 flex justify-center items-center text-white text-3xl">Loading Experience...</div>}>
+      </LazySection>
+      <LazySection id="experience" fallbackText="Loading Experience...">
         <Experience />
-      </Suspense>
-      <Suspense fallback={<div className="h-screen w-full bg-gray-800 flex justify-center items-center text-white text-3xl">Loading Contact...</div>}>
+      </LazySection>
+      <LazySection id="contact" fallbackText="Loading Contact...">
         <Contact />
-      </Suspense>
+      </LazySection>
       <SocialLinks />
     </div>
   );
