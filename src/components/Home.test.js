@@ -40,5 +40,5 @@ test('renders resume download link with correct attributes', () => {
   const resumeLink = screen.getByRole('link', { name: /resume/i });
   expect(resumeLink).not.toBeNull();
   expect(resumeLink.getAttribute('href')).toBe('/resume.pdf');
-  expect(resumeLink.getAttribute('download')).toBe('true');
+  expect(resumeLink.getAttribute('download')).toBe(''); // download={true} sets it to "" in HTML
 });
