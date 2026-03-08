@@ -23,13 +23,28 @@ const Contact = () => {
                     <form action={process.env.REACT_APP_GETFORM_ENDPOINT} aria-label="Contact form"
                     method='post' className='flex flex-col w-full md:w-1/2'>
                         {/* Security: Added required and maxLength attributes to prevent empty submissions and DoS */}
-                        <input type="text" name='name' placeholder='Enter your name' aria-label="Name" autoComplete="name" required maxLength={50} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'/>
+                        <div className="flex flex-col text-left mb-4">
+                            <label htmlFor="name" className="text-sm font-medium text-gray-300 mb-1">
+                                Name <span className="text-cyan-500">*</span>
+                            </label>
+                            <input id="name" type="text" name='name' placeholder='Enter your name' aria-label="Name" autoComplete="name" required maxLength={50} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500'/>
+                        </div>
 
-                        <input type="email" name='email' placeholder='Enter your email' aria-label="Email" autoComplete="email" required maxLength={100} className='p-2 my-4 bg-transparent border-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'/>
+                        <div className="flex flex-col text-left mb-4">
+                            <label htmlFor="email" className="text-sm font-medium text-gray-300 mb-1">
+                                Email <span className="text-cyan-500">*</span>
+                            </label>
+                            <input id="email" type="email" name='email' placeholder='Enter your email' aria-label="Email" autoComplete="email" required maxLength={100} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500'/>
+                        </div>
 
-                        <textarea name="message" rows="10" placeholder='Enter your message' aria-label="Message" autoComplete="off" required maxLength={500} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-500'></textarea>
+                        <div className="flex flex-col text-left mb-4">
+                            <label htmlFor="message" className="text-sm font-medium text-gray-300 mb-1">
+                                Message <span className="text-cyan-500">*</span>
+                            </label>
+                            <textarea id="message" name="message" rows="10" placeholder='Enter your message' aria-label="Message" autoComplete="off" required maxLength={500} className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500'></textarea>
+                        </div>
 
-                        <button type="submit" aria-label="Send Message" className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-105 duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800'> Submit</button>
+                        <button type="submit" aria-label="Send Message" className='text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-4 mx-auto flex items-center rounded-md hover:scale-105 duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800'> Submit</button>
                     </form>
                 </div>
             </div>
