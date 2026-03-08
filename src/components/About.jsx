@@ -32,18 +32,20 @@ const About = () => {
             Visit my Competitive Programming handles :
             </p>
 
-            {cp.map(({id, site, link}) => (
-                <p key={id} className='text-xl mt-2'>
-                <a href={link} className='text-blue-500' target='_blank' rel="noreferrer">{site}</a> 
-            </p>
-            ))}
+            <ul className='mt-2'>
+                {cp.map(({id, site, link}) => (
+                    <li key={id} className='text-xl mt-2'>
+                        <a href={link} className='text-blue-500 hover:text-blue-700 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-sm' target='_blank' rel="noreferrer noopener" aria-label={`Visit my ${site} profile`}>{site}</a>
+                    </li>
+                ))}
+            </ul>
 
             <div className='pd-8 mt-5'>
                 <p className='text-3xl font-bold inline text-black'>Personal Details</p>
             </div>
 
             <ul>
-                <li className='text-xl mt-3'><b className='text-black'>Email:</b> yashshah2400@gmail.com</li>
+                <li className='text-xl mt-3'><b className='text-black'>Email:</b> <a href="mailto:yashshah2400@gmail.com" className='hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-sm' aria-label="Send an email to yashshah2400@gmail.com">yashshah2400@gmail.com</a></li>
                 <li className='text-xl mt-3'><b className='text-black'>Birthday:</b> 24th February 2003</li>
                 <li className='text-xl mt-3'><b className='text-black'>Degree:</b> BTECH - Computer Science and Engineering</li>
                 <li className='text-xl mt-3'><b className='text-black'>University:</b> National Institute of Technology, Surat</li>
