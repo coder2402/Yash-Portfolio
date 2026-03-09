@@ -5,9 +5,10 @@ import SocialLinks from "./components/SocialLinks";
 import About from "./components/About";
 
 // Lazy load heavy components to improve initial load time
-const MyWork = lazy(() => import("./components/MyWork"));
-const Experience = lazy(() => import("./components/Experience"));
-const Contact = lazy(() => import("./components/Contact"));
+// OPTIMIZATION: Added /* webpackPrefetch: true */ to lazy-loaded chunks so the browser fetches them during idle time, avoiding loading delays when they are scrolled into view.
+const MyWork = lazy(() => import(/* webpackPrefetch: true */ "./components/MyWork"));
+const Experience = lazy(() => import(/* webpackPrefetch: true */ "./components/Experience"));
+const Contact = lazy(() => import(/* webpackPrefetch: true */ "./components/Contact"));
 
 // OPTIMIZATION: IntersectionObserver-based LazySection wrapper component
 // Defers loading the React.lazy chunk until the section is scrolled into view (or close to it)
