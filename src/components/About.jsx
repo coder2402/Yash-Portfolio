@@ -17,7 +17,8 @@ const About = () => {
 
   return (
     <div id='about'
-    className='w-full h-full bg-gradient-to-b from-gray-400 to-gray-800 text-white pl-5 md:pl-36 pt-28'
+    tabIndex={-1}
+    className='w-full h-full bg-gradient-to-b from-gray-400 to-gray-800 text-white pl-5 md:pl-36 pt-28 focus:outline-none'
     >
         <div className='max-w-screen p-4 mx-auto flex flex-col justify-center w-full h-full'>
             <div className='pd-8'>
