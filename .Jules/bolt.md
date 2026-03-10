@@ -4,3 +4,6 @@
 ## 2024-05-25 - React.lazy Eager Fetching
 **Learning:** Unconditionally rendering a `React.lazy` component causes the browser to eagerly fetch the javascript chunk as soon as the component mounts, defeating the purpose of below-the-fold code splitting.
 **Action:** Use an `IntersectionObserver` wrapper to defer rendering the `React.lazy` component until the user actually scrolls near it. Ensure that the wrapper `div` has the necessary `id` attribute if the section is a target for hash navigation.
+## 2024-05-26 - Webpack Prefetch in CRA
+**Learning:** In Create React App (Webpack 5), `/* webpackPrefetch: true */` magic comments on dynamic imports inject `<link rel='prefetch'>` tags into the DOM dynamically at runtime via the chunk loader, rather than hardcoding them into the static `index.html` build output.
+**Action:** Use `/* webpackPrefetch: true */` for heavy content sections below the fold to prefetch chunks during browser idle time, preventing loading delays upon scroll.
