@@ -39,7 +39,7 @@ const LazySection = ({ id, children, fallbackText }) => {
   }, []);
 
   return (
-    <div id={id} ref={sectionRef}>
+    <div id={id} ref={sectionRef} tabIndex={-1} className="focus:outline-none">
       {isVisible ? (
         <Suspense fallback={<div className="h-screen w-full bg-gray-800 flex justify-center items-center text-white text-3xl">{fallbackText}</div>}>
           {children}
