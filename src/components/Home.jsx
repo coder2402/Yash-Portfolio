@@ -5,7 +5,7 @@ import {BiDownload} from 'react-icons/bi'
 
 const Home = () => {
   return (
-    <div id="home" className='h-screen w-full bg-gradient-to-b from-gray-800 to-gray-400 pt-20'>
+    <div id="home" className='h-screen w-full bg-gradient-to-b from-gray-800 to-gray-400 pt-20 focus:outline-none' tabIndex={-1}>
         <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row'>
 
                 <div>
