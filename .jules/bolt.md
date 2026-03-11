@@ -1,0 +1,3 @@
+## 2024-03-12 - Webpack Prefetch Magic Comments Implementation in CRA
+**Learning:** In Create React App (which uses Webpack 5), adding `/* webpackPrefetch: true */` magic comments on dynamic imports does not hardcode `<link rel="prefetch">` tags into the static `index.html` build output. Instead, Webpack dynamically injects these prefetch link tags into the DOM at runtime via its chunk loader, typically during browser idle time.
+**Action:** When verifying that prefetching works in CRA environments, I must inspect the live DOM (e.g. Chrome DevTools Network and Elements tabs) at runtime after initial load, rather than relying on static analysis of the built `index.html` file.
